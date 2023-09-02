@@ -9,7 +9,7 @@ const schema = new Schema({
     price: { type: Number, required: true },
     stock: { type: Number, required: true },
     sex: { type: String, required: true },
-    creator_id: { type: Types.ObjectId, required: true },
+    creator_id: { type: Types.ObjectId, ref: 'creators' },
     url_photo: { type: String, required: true },
 }, {
     timestamps: true
