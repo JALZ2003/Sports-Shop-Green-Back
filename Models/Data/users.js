@@ -1,7 +1,7 @@
 import 'dotenv/config.js';
 import '../../config/database.js';
 import bcryptjs from 'bcryptjs';
-import User from "../User.js";
+import User from '../User.js';
 
 const users = [{
     username: "Gerardo",
