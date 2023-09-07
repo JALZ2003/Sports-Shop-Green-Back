@@ -8,14 +8,14 @@ import not_found_handler from './middlewares/not_found_handler.js';
 import error_handler from './middlewares/error_handler.js';
 
 const server = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT|| 8082;
 
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 server.use(cors());
 server.use(morgan('dev'));
 
-server.use('/api', indexRouter);
+server.use('/api', indexRouter); console.log('/api')
 server.use(not_found_handler);
 server.use(error_handler);
 
