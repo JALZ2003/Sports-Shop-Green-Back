@@ -6,10 +6,13 @@ import validator from "../middlewares/validator.js";
 import register from "../controllers/auth/register.js";
 import accountExists from "../middlewares/accountExists.js";
 import createHash from "../middlewares/createHash.js";
+import signout from "../controllers/auth/signout.js";
+import passport from "../middlewares/passport.js";
 
 
 
-let authRouter= Router();
-authRouter.post('/register',validator(registerSchema),accountExists, createHash, register)
+let authRouter = Router();
+authRouter.post('/register',validator(registerSchema),accountExists, createHash, register);
+authRouter.post('/signout', passport.authenticate('jwt', { session: false }), signout);
 authRouter.get('/', read);
 export default authRouter;
