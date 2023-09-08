@@ -8,7 +8,7 @@ import not_found_handler from './middlewares/not_found_handler.js';
 import error_handler from './middlewares/error_handler.js';
 
 const server = express();
-const PORT = process.env.PORT|| 8082;
+const PORT = process.env.PORT|| 8080;
 
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));

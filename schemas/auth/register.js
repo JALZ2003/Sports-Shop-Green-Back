@@ -16,7 +16,7 @@ const schema = joi.object({
             'string.min': 'Password is too short!!',
             'string.alphanum': 'Password must be alphanum!!'
         }),
-    name: joi.string().required().min(3)
+        name: joi.string().required().min(3)
         .messages({
             'string.base': 'Name is required!',
             'string.empty': 'Name is required!',
