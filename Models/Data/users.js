@@ -4,14 +4,16 @@ import bcryptjs from 'bcryptjs';
 import User from '../User.js';
 
 const users = [{
-    username: "Gerardo",
+    name: "Gerardo",
+    lastName: "Aguirre",
     email: "gerardo@tg.com",
     password: bcryptjs.hashSync("prueba1234", 10),
     role: 0,
     photo: "https://www.emmegi.co.uk/wp-content/uploads/2019/01/User-Icon.jpg",
     active: false,
 }, {
-    username: "Jannus",
+    name: "Jannus",
+    lastName: "Largo",
     email: "jannus@tg.com",
     password: bcryptjs.hashSync("prueba1234", 10),
     role: 1,
@@ -19,7 +21,8 @@ const users = [{
     active: false,
 },
 {
-    username: "Santiago",
+    name: "Santiago",
+    lastName: "Vanegas",
     email: "santiago@tg.com",
     password: bcryptjs.hashSync("prueba1234", 10),
     role: 1,
@@ -27,7 +30,8 @@ const users = [{
     active: false,
 },
 {
-    username: "Andrea",
+    name: "Andrea",
+    lastName: "Prada",
     email: "andrea@tg.com",
     password: bcryptjs.hashSync("prueba1234", 10),
     role: 1,
@@ -35,7 +39,8 @@ const users = [{
     active: false,
 },
 {
-    username: "NataliaG",
+    name: "Natalia",
+    lastName: "Garcia",
     email: "nataliag@tg.com",
     password: bcryptjs.hashSync("prueba1234", 10),
     role: 2,
@@ -43,7 +48,8 @@ const users = [{
     active: false,
 },
 {
-    username: "NataliaB",
+    name: "Natalia",
+    lastName: "Berrio",
     email: "nataliab@tg.com",
     password: bcryptjs.hashSync("prueba1234", 10),
     role: 2,
