@@ -3,9 +3,8 @@ import Category from "../../Models/Category.js";
 
 export default async (req, res, next) => {
     try {
-        let data = req.body
-        console.log(req.body);
-        let one = await Category.create(data)
+        req.body.admin_id = req.user._id;
+        let one = await Category.create(req.body);
         return res.status(201).json({
             success: true,
             response: one,

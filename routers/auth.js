@@ -2,7 +2,6 @@
 import { Router } from "express";
 
 // Controllers
-import read from "../controllers/auth/read.js";
 import register from "../controllers/auth/register.js";
 import signout from "../controllers/auth/signout.js";
 import readAdmi from "../controllers/auth/readAdmi.js";
@@ -27,7 +26,6 @@ import loginSchema from '../schemas/auth/sigin.js';
 const authRouter = Router();
 
 // Endpoints
-authRouter.get('/', read);
 authRouter.get('/admi', readAdmi);
 authRouter.post('/login', validator(loginSchema), accountNotExists, validate_password, generateToken, sigin);
 authRouter.post('/token', passport.authenticate('jwt', { session: false }), generateToken, token);
