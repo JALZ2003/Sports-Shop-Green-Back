@@ -18,7 +18,6 @@ import categorySchema from '../schemas/categories/create.js';
 // Router
 const categoriesRouter = Router();
 
-
 categoriesRouter.get('/', read);
 categoriesRouter.post('/', passport.authenticate('jwt', { session: false }), is_admin, validator(categorySchema), create);
 categoriesRouter.put('/:id', passport.authenticate('jwt', { session: false }), is_admin, update);
