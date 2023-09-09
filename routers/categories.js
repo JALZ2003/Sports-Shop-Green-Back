@@ -18,17 +18,6 @@ import categorySchema from '../schemas/categories/create.js';
 // Router
 const categoriesRouter = Router();
 
-// Middlewares
-import passport from "../middlewares/passport.js";
-import validator from "../middlewares/validator.js";
-import is_admin from "../middlewares/is_admin.js";
-
-// Schema
-import categorySchema from '../schemas/categories/create.js';
-
-// Router
-const categoriesRouter = Router();
-
 categoriesRouter.get('/', read);
 categoriesRouter.post('/', passport.authenticate('jwt', { session: false }), is_admin, validator(categorySchema), create);
 categoriesRouter.put('/:id', passport.authenticate('jwt', { session: false }), is_admin, update);
