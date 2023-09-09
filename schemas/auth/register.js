@@ -16,7 +16,7 @@ const schema = joi.object({
             'string.min': 'Password is too short!!',
             'string.alphanum': 'Password must be alphanum!!'
         }),
-        confirmPassword: joi.string().required().min(8).alphanum()
+    confirmPassword: joi.string().required().min(8).alphanum()
         .messages({
             'any.required': 'Password is required!!',
             'string.base': 'Password is required!!',
@@ -24,22 +24,22 @@ const schema = joi.object({
             'string.min': 'Password is too short!!',
             'string.alphanum': 'Password must be alphanum!!'
         }),
-        name: joi.string().required().min(3)
+    name: joi.string().required().min(3)
         .messages({
             'string.base': 'Name is required!',
             'string.empty': 'Name is required!',
             'string.min': 'Name is too short!'
         }),
-        lastName: joi.string().required().min(3)
+    lastName: joi.string().required().min(3)
         .messages({
             'string.base': 'Lastname is required!',
             'string.empty': 'Lastname is required!',
             'string.min': 'Lastname is too short!'
         }),
-        authorize:joi.boolean().valid(true).required().messages({
-            'any.only': 'You must authorize the terms.',
-      'any.required': 'Authorization of terms is required.',
-        })
+    authorize: joi.boolean().valid(true).required().messages({
+        'any.only': 'You must authorize the terms.',
+        'any.required': 'Authorization of terms is required.',
+    })
 })
 
 export default schema;
