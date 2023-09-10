@@ -6,6 +6,7 @@ import read from "../controllers/products/read.js";
 import readAdmi from "../controllers/products/readAdmi.js";
 import read_one from "../controllers/products/read_one.js";
 import destroy from "../controllers/products/destroy.js";
+import update from "../controllers/products/update.js";
 
 // Middlewares
 import passport from '../middlewares/passport.js';
@@ -18,6 +19,6 @@ productsRouter.get("/", read);
 productsRouter.get("/admi", readAdmi);
 productsRouter.post('/:id', read_one);
 productsRouter.post('/destroy/:id', passport.authenticate('jwt', { session: false }), is_creator_or_admin, destroy);
-
+productsRouter.post('/update/:id', passport.authenticate('jwt', { session: false }), is_creator_or_admin, update);
 
 export default productsRouter;
