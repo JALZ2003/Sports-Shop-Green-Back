@@ -1,10 +1,13 @@
-import joi from 'joi';
+import joi from 'joi-oid';
 
 export default joi.object({
     name: joi.string().required().min(2).max(50).messages({
         'string.min': 'Name must be at least 2 characters long.',
         'string.max': 'Name cannot exceed 50 characters.',
         'any.required': 'Name is required.',
+    }),
+    category_id: joi.objectId().required().messages({
+        "any.required" : "Category is required",
     }),
     description: joi.string().required().messages({
         'string.base': 'Description must be a string.',

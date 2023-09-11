@@ -25,7 +25,7 @@ productsRouter.get("/", read);
 productsRouter.get('/:id', read_one);
 productsRouter.get("/admi", readAdmi);
 productsRouter.post('/', passport.authenticate('jwt', { session: false }), is_creator_or_admin, validator(schemaProduct), add_creator_in_product, create);
-productsRouter.delete('/destroy/:id', passport.authenticate('jwt', { session: false }), is_creator_or_admin, destroy);
-productsRouter.put('/update/:id', passport.authenticate('jwt', { session: false }), is_creator_or_admin, update);
+productsRouter.delete('/:id', passport.authenticate('jwt', { session: false }), is_creator_or_admin, destroy);
+productsRouter.put('/:id', passport.authenticate('jwt', { session: false }), is_creator_or_admin, update);
 
 export default productsRouter;

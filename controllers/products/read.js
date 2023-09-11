@@ -10,6 +10,7 @@ export default async (req, res, next) => {
 		if (req.query.category) { search.category_id = req.query.category.split(","); }
 		if (req.query.page) { pagination.page = Number(req.query.page); }
 		if (req.query.quantity) { pagination.limit = Number(req.query.quantity); }
+		console.log(search);
 
 		const skip = (pagination.page - 1) * pagination.limit;
 		const limit = pagination.limit;
