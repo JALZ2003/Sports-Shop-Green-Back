@@ -8,6 +8,7 @@ const creators = [{
     company: "Nike",
     city: "Tulua",
     country: "Colombia",
+    active:true,
     user_id: "64f3a791fadd491be7fb1167",
 }, {
     name: "Santiago",
@@ -15,6 +16,7 @@ const creators = [{
     company: "Adidas",
     city: "Medellin",
     country: "Colombia",
+    active:true,
     user_id: "64f3a791fadd491be7fb1168",
 }, {
     name: "Andrea",
@@ -22,6 +24,7 @@ const creators = [{
     company: "Sneakers",
     city: "Villavicencio",
     country: "Colombia",
+    active:true,
     user_id: "64f3a791fadd491be7fb1169",
 },]
 
