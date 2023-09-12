@@ -2,9 +2,15 @@ import Cart from "../../models/Cart.js";
 
 export default async (req, res, next) => {
     try {
-        const cart = await Cart.find({ user_id: req.user._id }, "product_id state_id quantity")
-            .populate("product_id", "-createdAt -updatedAt -__v")
-            .populate("state_id", "-_id name description");
+        const cart = await Cart.find({ user_id: req.user._id }, "_id product_id state_id quantity")
+            .populate({
+                path: "product_id",
+                select: "-_id -createdAt -updatedAt -__v",
+                populate: {
+                    path: "category_id",
+                    select: "-_id name color",
+                }
+            }).populate("state_id", "-_id name description");
         let total = 0;
         for (const product of cart) { total += product.product_id.price * product.quantity; }
         if (cart) {
