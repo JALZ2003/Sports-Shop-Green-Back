@@ -2,6 +2,7 @@ import Cart from '../../models/Cart.js';
 
 export default async (req, res, next) => {
     try {
+        req.body.quantity = Number(req.body.quantity);
         const cart = await Cart.create(req.body);
         if (cart) {
             return res.status(200).json({ success: true, response: cart, message: 'Cart Created' });

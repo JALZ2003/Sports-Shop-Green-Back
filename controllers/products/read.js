@@ -23,7 +23,7 @@ export default async (req, res, next) => {
 		const all = await Product.find(search).skip(skip).limit(limit).sort(ordering);
 
 		if (all.length > 0) {
-			return res.status(200).json({ success: true, response: all, message: "Products found!", prev, next, pages });
+			return res.status(200).json({ success: true, response: all, message: "Products found!", prev, next, pages, allProducts });
 		} else {
 			return res.status(400).json({ success: false, response: null, message: "Products not found!" });
 		}

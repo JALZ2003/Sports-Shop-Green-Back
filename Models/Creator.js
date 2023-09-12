@@ -8,7 +8,7 @@ const schema = new Schema({
     company: { type: String, required: true },
     city: { type: String, required: true },
     country: { type: String, required: true },
-    active: { type: Boolean, default: true },
+    active: { type: Boolean, default: false },
     user_id: { type: Types.ObjectId, ref: 'users' },
 }, {
     timestamps: true
