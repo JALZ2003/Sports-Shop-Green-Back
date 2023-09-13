@@ -18,7 +18,7 @@ export default async (req, res, next) => {
     const after = pagination.page === pages ? null : pagination.page + 1;
 
     try {
-        let products = await Product.find(queries).populate("category_id").skip(skip).limit(limit)
+        let products = await Product.find(queries).populate("category_id", "name color").skip(skip).limit(limit)
         if (products.length != 0) {
             return res.status(200).json({
                 response: {products, before, after, allProducts},
