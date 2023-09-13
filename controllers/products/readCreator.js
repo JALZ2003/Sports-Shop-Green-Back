@@ -2,7 +2,8 @@ import Product from "../../Models/Product.js";
 
 export default async (req, res, next) => {
     try {
-        const productsCreator = await Product.find({ creator_id: req.creator._id });
+        const productsCreator = await Product.find({ creator_id: req.creator._id }, "-_id -createdAt -updatedAt -__v -creator_id")
+            .populate("category_id", "name color");
         if (productsCreator.length > 0) {
             return res.status(200).json({ success: true, response: productsCreator, message: 'Products Found' });
         }
