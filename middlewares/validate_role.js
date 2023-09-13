@@ -2,7 +2,7 @@ import Creator from "../models/Creator.js";
 
 export default async (req, res, next) => {
     if (req.user.role === 1) {
-        const creator = await Creator.findById(req.user._id);
+        const creator = await Creator.findOne({ user_id: req.user._id });
         if (creator) {
             req.creator = creator;
             return next();
