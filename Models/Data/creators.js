@@ -9,7 +9,7 @@ const creators = [{
     city: "Tulua",
     country: "Colombia",
     active:true,
-    user_id: "64f3a791fadd491be7fb1167",
+    user_id: "6502155eb1d5cba7ec1e924b",
 }, {
     name: "Santiago",
     lastname: "Vanegas",
@@ -17,7 +17,7 @@ const creators = [{
     city: "Medellin",
     country: "Colombia",
     active:true,
-    user_id: "64f3a791fadd491be7fb1168",
+    user_id: "6502155eb1d5cba7ec1e924c",
 }, {
     name: "Andrea",
     lastname: "Prada",
@@ -25,7 +25,7 @@ const creators = [{
     city: "Villavicencio",
     country: "Colombia",
     active:true,
-    user_id: "64f3a791fadd491be7fb1169",
+    user_id: "6502155eb1d5cba7ec1e924d",
 },]
 
 Creator.insertMany(creators);
