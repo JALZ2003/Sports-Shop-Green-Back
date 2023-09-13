@@ -6,6 +6,7 @@ import authRouter from './auth.js';
 import routerStates from "./states.js";
 import routerCreators from "./creators.js";
 import routerCart from "./cart.js";
+import routerPaymetns from "./payments.js";
 
 const indexRouter = Router();
 
@@ -15,6 +16,7 @@ indexRouter.use('/categories', categoriesRouter);
 indexRouter.use('/states', routerStates);
 indexRouter.use('/creators', routerCreators);
 indexRouter.use('/carts', routerCart);
+indexRouter.use('/payments', routerPaymetns);
 
 export default indexRouter;
 
