@@ -2,10 +2,10 @@ import Cart from "../../models/Cart.js";
 
 export default async (req, res, next) => {
     try {
-        const cart = await Cart.find({ user_id: req.user._id }, "_id product_id state_id quantity")
+        const cart = await Cart.find({ user_id: req.user._id }, "_id product_id state_id quantity createdAt")
             .populate({
                 path: "product_id",
-                select: "-_id -createdAt -updatedAt -__v",
+                select: "-createdAt -updatedAt -__v",
                 populate: {
                     path: "category_id",
                     select: "-_id name color",
