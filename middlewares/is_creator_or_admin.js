@@ -1,4 +1,4 @@
-import Product from "../Models/Product.js";
+import Product from "../models/Product.js";
 import Creator from "../models/Creator.js";
 
 export default async (req, res, next) => {
@@ -8,6 +8,7 @@ export default async (req, res, next) => {
     if (req.user.role === 1) {
         const creatorFind = await Creator.findOne({ user_id: req.user._id });
         const product = await Product.findOne({ _id: req.params.id, creator_id: creatorFind?._id });
+        console.log(product);
         if (product) {
             return next();
         }

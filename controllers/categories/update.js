@@ -1,4 +1,4 @@
-import Category from "../../Models/Category.js";
+import Category from "../../models/Category.js";
 
 export default async (req, res, next) => {
     try {
