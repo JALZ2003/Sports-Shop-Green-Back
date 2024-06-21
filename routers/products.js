@@ -16,6 +16,7 @@ import is_creator_or_admin from "../middlewares/is_creator_or_admin.js";
 import validator from '../middlewares/validator.js';
 import add_creator_in_product from "../middlewares/add_creator_in_product.js";
 import validate_role from "../middlewares/validate_role.js";
+import is_creator_admin from "../middlewares/is_creator_admin.js";
 
 // Schema
 import schemaProduct from '../schemas/products/create.js';
@@ -27,7 +28,7 @@ productsRouter.get("/", read);
 productsRouter.get('/:id', read_one);
 productsRouter.get("/admi", readAdmi);
 productsRouter.get("/creator", passport.authenticate('jwt', { session: false }), validate_role, readCreator);
-productsRouter.post('/', passport.authenticate('jwt', { session: false }), is_creator_or_admin, validator(schemaProduct), add_creator_in_product, create);
+productsRouter.post('/', passport.authenticate('jwt', { session: false }), is_creator_admin, validator(schemaProduct), add_creator_in_product, create);
 productsRouter.delete('/:id', passport.authenticate('jwt', { session: false }), is_creator_or_admin, destroy);
 productsRouter.put('/:id', passport.authenticate('jwt', { session: false }), is_creator_or_admin, update);
 
